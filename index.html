@@ -14,7 +14,7 @@
   <div class="max-w-5xl mx-auto p-6">
     <header class="text-center mb-6">
       <h1 class="text-4xl font-extrabold text-slate-800 mb-2">Junio 2025</h1>
-      <p class="text-slate-600">Turnos alternados entre Mamá y Rhandall</p>
+      <p class="text-slate-600">Turnos alternados</p>
     </header><!-- Leyenda -->
 <div class="flex flex-wrap justify-center gap-6 mb-8 text-sm">
   <div class="flex items-center gap-2">
@@ -27,8 +27,8 @@
   </div>
 </div>
 
-<!-- Calendario -->
-<div class="grid grid-cols-7 gap-3 text-center text-sm sm:text-base bg-white p-4 rounded-2xl shadow-xl">
+<!-- Calendario: versión desktop/tablet -->
+<div class="hidden sm:grid grid-cols-7 gap-3 text-center text-sm sm:text-base bg-white p-4 rounded-2xl shadow-xl">
   <!-- Días de la semana -->
   <div class="font-bold text-slate-600">Dom</div>
   <div class="font-bold text-slate-600">Lun</div>
@@ -39,38 +39,142 @@
   <div class="font-bold text-slate-600">Sáb</div>
 
   <!-- Días del mes estilizados -->
-  <div class="rounded-xl p-3 bg-emerald-300 text-white font-semibold hover:scale-105 hover:brightness-110 hover-transition shadow">1</div>
-  <div class="rounded-xl p-3 bg-emerald-300 text-white font-semibold hover:scale-105 hover:brightness-110 hover-transition shadow">2</div>
-  <div class="rounded-xl p-3 bg-purple-300 text-white font-semibold hover:scale-105 hover:brightness-110 hover-transition shadow">3</div>
-  <div class="rounded-xl p-3 bg-purple-300 text-white font-semibold hover:scale-105 hover:brightness-110 hover-transition shadow">4</div>
-  <div class="rounded-xl p-3 bg-purple-300 text-white font-semibold hover:scale-105 hover:brightness-110 hover-transition shadow">5</div>
-  <div class="rounded-xl p-3 bg-emerald-300 text-white font-semibold hover:scale-105 hover:brightness-110 hover-transition shadow">6</div>
-  <div class="rounded-xl p-3 bg-emerald-300 text-white font-semibold hover:scale-105 hover:brightness-110 hover-transition shadow">7</div>
-  <div class="rounded-xl p-3 bg-emerald-300 text-white font-semibold hover:scale-105 hover:brightness-110 hover-transition shadow">8</div>
-  <div class="rounded-xl p-3 bg-purple-300 text-white font-semibold hover:scale-105 hover:brightness-110 hover-transition shadow">9</div>
-  <div class="rounded-xl p-3 bg-purple-300 text-white font-semibold hover:scale-105 hover:brightness-110 hover-transition shadow">10</div>
-  <div class="rounded-xl p-3 bg-purple-300 text-white font-semibold hover:scale-105 hover:brightness-110 hover-transition shadow">11</div>
-  <div class="rounded-xl p-3 bg-emerald-300 text-white font-semibold hover:scale-105 hover:brightness-110 hover-transition shadow">12</div>
-  <div class="rounded-xl p-3 bg-emerald-300 text-white font-semibold hover:scale-105 hover:brightness-110 hover-transition shadow">13</div>
-  <div class="rounded-xl p-3 bg-emerald-300 text-white font-semibold hover:scale-105 hover:brightness-110 hover-transition shadow">14</div>
-  <div class="rounded-xl p-3 bg-purple-300 text-white font-semibold hover:scale-105 hover:brightness-110 hover-transition shadow">15</div>
-  <div class="rounded-xl p-3 bg-purple-300 text-white font-semibold hover:scale-105 hover:brightness-110 hover-transition shadow">16</div>
-  <div class="rounded-xl p-3 bg-purple-300 text-white font-semibold hover:scale-105 hover:brightness-110 hover-transition shadow">17</div>
-  <div class="rounded-xl p-3 bg-emerald-300 text-white font-semibold hover:scale-105 hover:brightness-110 hover-transition shadow">18</div>
-  <div class="rounded-xl p-3 bg-emerald-300 text-white font-semibold hover:scale-105 hover:brightness-110 hover-transition shadow">19</div>
-  <div class="rounded-xl p-3 bg-emerald-300 text-white font-semibold hover:scale-105 hover:brightness-110 hover-transition shadow">20</div>
-  <div class="rounded-xl p-3 bg-purple-300 text-white font-semibold hover:scale-105 hover:brightness-110 hover-transition shadow">21</div>
-  <div class="rounded-xl p-3 bg-purple-300 text-white font-semibold hover:scale-105 hover:brightness-110 hover-transition shadow">22</div>
-  <div class="rounded-xl p-3 bg-purple-300 text-white font-semibold hover:scale-105 hover:brightness-110 hover-transition shadow">23</div>
-  <div class="rounded-xl p-3 bg-emerald-300 text-white font-semibold hover:scale-105 hover:brightness-110 hover-transition shadow">24</div>
-  <div class="rounded-xl p-3 bg-emerald-300 text-white font-semibold hover:scale-105 hover:brightness-110 hover-transition shadow">25</div>
-  <div class="rounded-xl p-3 bg-emerald-300 text-white font-semibold hover:scale-105 hover:brightness-110 hover-transition shadow">26</div>
-  <div class="rounded-xl p-3 bg-purple-300 text-white font-semibold hover:scale-105 hover:brightness-110 hover-transition shadow">27</div>
-  <div class="rounded-xl p-3 bg-purple-300 text-white font-semibold hover:scale-105 hover:brightness-110 hover-transition shadow">28</div>
-  <div class="rounded-xl p-3 bg-purple-300 text-white font-semibold hover:scale-105 hover:brightness-110 hover-transition shadow">29</div>
-  <div class="rounded-xl p-3 bg-emerald-300 text-white font-semibold hover:scale-105 hover:brightness-110 hover-transition shadow">30</div>
+  <!-- Lista de días con colores -->
+  <!-- Generado desde el 1 al 30 según patrón dado -->
+  <!-- Días 1-30 -->
+  <div class="rounded-xl p-3 bg-emerald-300 text-white font-semibold hover:scale-105 hover-transition shadow">1</div>
+  <div class="rounded-xl p-3 bg-emerald-300 text-white font-semibold hover:scale-105 hover-transition shadow">2</div>
+  <div class="rounded-xl p-3 bg-purple-300 text-white font-semibold hover:scale-105 hover-transition shadow">3</div>
+  <div class="rounded-xl p-3 bg-purple-300 text-white font-semibold hover:scale-105 hover-transition shadow">4</div>
+  <div class="rounded-xl p-3 bg-purple-300 text-white font-semibold hover:scale-105 hover-transition shadow">5</div>
+  <div class="rounded-xl p-3 bg-emerald-300 text-white font-semibold hover:scale-105 hover-transition shadow">6</div>
+  <div class="rounded-xl p-3 bg-emerald-300 text-white font-semibold hover:scale-105 hover-transition shadow">7</div>
+  <div class="rounded-xl p-3 bg-emerald-300 text-white font-semibold hover:scale-105 hover-transition shadow">8</div>
+  <div class="rounded-xl p-3 bg-purple-300 text-white font-semibold hover:scale-105 hover-transition shadow">9</div>
+  <div class="rounded-xl p-3 bg-purple-300 text-white font-semibold hover:scale-105 hover-transition shadow">10</div>
+  <div class="rounded-xl p-3 bg-purple-300 text-white font-semibold hover:scale-105 hover-transition shadow">11</div>
+  <div class="rounded-xl p-3 bg-emerald-300 text-white font-semibold hover:scale-105 hover-transition shadow">12</div>
+  <div class="rounded-xl p-3 bg-emerald-300 text-white font-semibold hover:scale-105 hover-transition shadow">13</div>
+  <div class="rounded-xl p-3 bg-emerald-300 text-white font-semibold hover:scale-105 hover-transition shadow">14</div>
+  <div class="rounded-xl p-3 bg-purple-300 text-white font-semibold hover:scale-105 hover-transition shadow">15</div>
+  <div class="rounded-xl p-3 bg-purple-300 text-white font-semibold hover:scale-105 hover-transition shadow">16</div>
+  <div class="rounded-xl p-3 bg-purple-300 text-white font-semibold hover:scale-105 hover-transition shadow">17</div>
+  <div class="rounded-xl p-3 bg-emerald-300 text-white font-semibold hover:scale-105 hover-transition shadow">18</div>
+  <div class="rounded-xl p-3 bg-emerald-300 text-white font-semibold hover:scale-105 hover-transition shadow">19</div>
+  <div class="rounded-xl p-3 bg-emerald-300 text-white font-semibold hover:scale-105 hover-transition shadow">20</div>
+  <div class="rounded-xl p-3 bg-purple-300 text-white font-semibold hover:scale-105 hover-transition shadow">21</div>
+  <div class="rounded-xl p-3 bg-purple-300 text-white font-semibold hover:scale-105 hover-transition shadow">22</div>
+  <div class="rounded-xl p-3 bg-purple-300 text-white font-semibold hover:scale-105 hover-transition shadow">23</div>
+  <div class="rounded-xl p-3 bg-emerald-300 text-white font-semibold hover:scale-105 hover-transition shadow">24</div>
+  <div class="rounded-xl p-3 bg-emerald-300 text-white font-semibold hover:scale-105 hover-transition shadow">25</div>
+  <div class="rounded-xl p-3 bg-emerald-300 text-white font-semibold hover:scale-105 hover-transition shadow">26</div>
+  <div class="rounded-xl p-3 bg-purple-300 text-white font-semibold hover:scale-105 hover-transition shadow">27</div>
+  <div class="rounded-xl p-3 bg-purple-300 text-white font-semibold hover:scale-105 hover-transition shadow">28</div>
+  <div class="rounded-xl p-3 bg-purple-300 text-white font-semibold hover:scale-105 hover-transition shadow">29</div>
+  <div class="rounded-xl p-3 bg-emerald-300 text-white font-semibold hover:scale-105 hover-transition shadow">30</div>
+</div>
+
+<!-- Versión móvil (lista) -->
+<div class="sm:hidden space-y-3 mt-6">
+  <!-- Días en formato lista -->
+  <!-- Día, nombre, color -->
+  <!-- Generado manualmente para cada día -->
+  <!-- Reutilizando patrón de colores y nombres -->
+  <!-- Puedes optimizar esto con JS si lo deseas -->
+  <!-- Día | DíaSemana | Persona -->
+  <!-- 1 - 30 -->
+  <div class="flex items-center justify-between rounded-xl p-4 bg-emerald-300 text-white shadow">
+    <span class="font-semibold">1 Dom</span><span>Rhandall</span>
+  </div>
+  <div class="flex items-center justify-between rounded-xl p-4 bg-emerald-300 text-white shadow">
+    <span class="font-semibold">2 Lun</span><span>Rhandall</span>
+  </div>
+  <div class="flex items-center justify-between rounded-xl p-4 bg-purple-300 text-white shadow">
+    <span class="font-semibold">3 Mar</span><span>Mamá</span>
+  </div>
+  <div class="flex items-center justify-between rounded-xl p-4 bg-purple-300 text-white shadow">
+    <span class="font-semibold">4 Mié</span><span>Mamá</span>
+  </div>
+  <div class="flex items-center justify-between rounded-xl p-4 bg-purple-300 text-white shadow">
+    <span class="font-semibold">5 Jue</span><span>Mamá</span>
+  </div>
+  <div class="flex items-center justify-between rounded-xl p-4 bg-emerald-300 text-white shadow">
+    <span class="font-semibold">6 Vie</span><span>Rhandall</span>
+  </div>
+  <div class="flex items-center justify-between rounded-xl p-4 bg-emerald-300 text-white shadow">
+    <span class="font-semibold">7 Sáb</span><span>Rhandall</span>
+  </div>
+  <div class="flex items-center justify-between rounded-xl p-4 bg-emerald-300 text-white shadow">
+    <span class="font-semibold">8 Dom</span><span>Rhandall</span>
+  </div>
+  <div class="flex items-center justify-between rounded-xl p-4 bg-purple-300 text-white shadow">
+    <span class="font-semibold">9 Lun</span><span>Mamá</span>
+  </div>
+  <div class="flex items-center justify-between rounded-xl p-4 bg-purple-300 text-white shadow">
+    <span class="font-semibold">10 Mar</span><span>Mamá</span>
+  </div>
+  <div class="flex items-center justify-between rounded-xl p-4 bg-purple-300 text-white shadow">
+    <span class="font-semibold">11 Mié</span><span>Mamá</span>
+  </div>
+  <div class="flex items-center justify-between rounded-xl p-4 bg-emerald-300 text-white shadow">
+    <span class="font-semibold">12 Jue</span><span>Rhandall</span>
+  </div>
+  <div class="flex items-center justify-between rounded-xl p-4 bg-emerald-300 text-white shadow">
+    <span class="font-semibold">13 Vie</span><span>Rhandall</span>
+  </div>
+  <div class="flex items-center justify-between rounded-xl p-4 bg-emerald-300 text-white shadow">
+    <span class="font-semibold">14 Sáb</span><span>Rhandall</span>
+  </div>
+  <div class="flex items-center justify-between rounded-xl p-4 bg-purple-300 text-white shadow">
+    <span class="font-semibold">15 Dom</span><span>Mamá</span>
+  </div>
+  <div class="flex items-center justify-between rounded-xl p-4 bg-purple-300 text-white shadow">
+    <span class="font-semibold">16 Lun</span><span>Mamá</span>
+  </div>
+  <div class="flex items-center justify-between rounded-xl p-4 bg-purple-300 text-white shadow">
+    <span class="font-semibold">17 Mar</span><span>Mamá</span>
+  </div>
+  <div class="flex items-center justify-between rounded-xl p-4 bg-emerald-300 text-white shadow">
+    <span class="font-semibold">18 Mié</span><span>Rhandall</span>
+  </div>
+  <div class="flex items-center justify-between rounded-xl p-4 bg-emerald-300 text-white shadow">
+    <span class="font-semibold">19 Jue</span><span>Rhandall</span>
+  </div>
+  <div class="flex items-center justify-between rounded-xl p-4 bg-emerald-300 text-white shadow">
+    <span class="font-semibold">20 Vie</span><span>Rhandall</span>
+  </div>
+  <div class="flex items-center justify-between rounded-xl p-4 bg-purple-300 text-white shadow">
+    <span class="font-semibold">21 Sáb</span><span>Mamá</span>
+  </div>
+  <div class="flex items-center justify-between rounded-xl p-4 bg-purple-300 text-white shadow">
+    <span class="font-semibold">22 Dom</span><span>Mamá</span>
+  </div>
+  <div class="flex items-center justify-between rounded-xl p-4 bg-purple-300 text-white shadow">
+    <span class="font-semibold">23 Lun</span><span>Mamá</span>
+  </div>
+  <div class="flex items-center justify-between rounded-xl p-4 bg-emerald-300 text-white shadow">
+    <span class="font-semibold">24 Mar</span><span>Rhandall</span>
+  </div>
+  <div class="flex items-center justify-between rounded-xl p-4 bg-emerald-300 text-white shadow">
+    <span class="font-semibold">25 Mié</span><span>Rhandall</span>
+  </div>
+  <div class="flex items-center justify-between rounded-xl p-4 bg-emerald-300 text-white shadow">
+    <span class="font-semibold">26 Jue</span><span>Rhandall</span>
+  </div>
+  <div class="flex items-center justify-between rounded-xl p-4 bg-purple-300 text-white shadow">
+    <span class="font-semibold">27 Vie</span><span>Mamá</span>
+  </div>
+  <div class="flex items-center justify-between rounded-xl p-4 bg-purple-300 text-white shadow">
+    <span class="font-semibold">28 Sáb</span><span>Mamá</span>
+  </div>
+  <div class="flex items-center justify-between rounded-xl p-4 bg-purple-300 text-white shadow">
+    <span class="font-semibold">29 Dom</span><span>Mamá</span>
+  </div>
+  <div class="flex items-center justify-between rounded-xl p-4 bg-emerald-300 text-white shadow">
+    <span class="font-semibold">30 Lun</span><span>Rhandall</span>
+  </div>
 </div>
 
   </div>
 </body>
-</html>
+    </html>
