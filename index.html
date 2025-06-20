@@ -1,180 +1,81 @@
-<!DOCTYPE html><html lang="es">
+<!DOCTYPE html>
+<html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Junio 2025</title>
+  <title id="pageTitle">Calendario de Turnos - 2025</title>
+  <meta name="description" content="Calendario de turnos alternados para Rhandall y Mamá en el año 2025.">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    .hover-transition {
-      transition: all 0.3s ease;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-gradient-to-tr from-slate-100 via-white to-slate-200 min-h-screen text-gray-800 font-sans">
+<body class="font-open-sans min-h-screen">
   <div class="max-w-5xl mx-auto p-6">
-    <header class="text-center mb-6">
-      <h1 class="text-4xl font-extrabold text-slate-800 mb-2">Junio 2025</h1>
-      <p class="text-slate-600">Turnos alternados</p>
-    </header><!-- Leyenda -->
-<div class="flex flex-wrap justify-center gap-6 mb-8 text-sm">
-  <div class="flex items-center gap-2">
-    <div class="w-5 h-5 bg-emerald-300 rounded-full shadow"></div>
-    <span class="font-medium text-emerald-700">Rhandall</span>
-  </div>
-  <div class="flex items-center gap-2">
-    <div class="w-5 h-5 bg-purple-300 rounded-full shadow"></div>
-    <span class="font-medium text-purple-700">Mamá</span>
-  </div>
-</div>
+    <div class="flex justify-end mb-4">
+      <button id="theme-toggle" class="p-2 rounded-full shadow-md transition-colors duration-300 nav-button-style">
+        <svg id="moon-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+        </svg>
+        <svg id="sun-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h1M3 12h1m15.325-7.325l-.707.707M5.325 18.675l-.707.707M18.675 5.325l-.707-.707M5.325 5.325l-.707-.707"></path>
+        </svg>
+      </button>
+    </div>
 
-<!-- Calendario: versión desktop/tablet -->
-<div class="hidden sm:grid grid-cols-7 gap-3 text-center text-sm sm:text-base bg-white p-4 rounded-2xl shadow-xl">
-  <!-- Días de la semana -->
-  <div class="font-bold text-slate-600">Dom</div>
-  <div class="font-bold text-slate-600">Lun</div>
-  <div class="font-bold text-slate-600">Mar</div>
-  <div class="font-bold text-slate-600">Mié</div>
-  <div class="font-bold text-slate-600">Jue</div>
-  <div class="font-bold text-slate-600">Vie</div>
-  <div class="font-bold text-slate-600">Sáb</div>
+    <div id="current-turn-display" class="p-4 rounded-xl mb-6 text-center shadow-md info-box-style">
+      <p class="text-lg font-semibold font-poppins">Hoy es <span id="current-date-span"></span> y el turno le corresponde a <span id="current-person-span" class="font-bold"></span>.</p>
+    </div>
 
-  <!-- Días del mes estilizados -->
-  <!-- Lista de días con colores -->
-  <!-- Generado desde el 1 al 30 según patrón dado -->
-  <!-- Días 1-30 -->
-  <div class="rounded-xl p-3 bg-emerald-300 text-white font-semibold hover:scale-105 hover-transition shadow">1</div>
-  <div class="rounded-xl p-3 bg-emerald-300 text-white font-semibold hover:scale-105 hover-transition shadow">2</div>
-  <div class="rounded-xl p-3 bg-purple-300 text-white font-semibold hover:scale-105 hover-transition shadow">3</div>
-  <div class="rounded-xl p-3 bg-purple-300 text-white font-semibold hover:scale-105 hover-transition shadow">4</div>
-  <div class="rounded-xl p-3 bg-purple-300 text-white font-semibold hover:scale-105 hover-transition shadow">5</div>
-  <div class="rounded-xl p-3 bg-emerald-300 text-white font-semibold hover:scale-105 hover-transition shadow">6</div>
-  <div class="rounded-xl p-3 bg-emerald-300 text-white font-semibold hover:scale-105 hover-transition shadow">7</div>
-  <div class="rounded-xl p-3 bg-emerald-300 text-white font-semibold hover:scale-105 hover-transition shadow">8</div>
-  <div class="rounded-xl p-3 bg-purple-300 text-white font-semibold hover:scale-105 hover-transition shadow">9</div>
-  <div class="rounded-xl p-3 bg-purple-300 text-white font-semibold hover:scale-105 hover-transition shadow">10</div>
-  <div class="rounded-xl p-3 bg-purple-300 text-white font-semibold hover:scale-105 hover-transition shadow">11</div>
-  <div class="rounded-xl p-3 bg-emerald-300 text-white font-semibold hover:scale-105 hover-transition shadow">12</div>
-  <div class="rounded-xl p-3 bg-emerald-300 text-white font-semibold hover:scale-105 hover-transition shadow">13</div>
-  <div class="rounded-xl p-3 bg-emerald-300 text-white font-semibold hover:scale-105 hover-transition shadow">14</div>
-  <div class="rounded-xl p-3 bg-purple-300 text-white font-semibold hover:scale-105 hover-transition shadow">15</div>
-  <div class="rounded-xl p-3 bg-purple-300 text-white font-semibold hover:scale-105 hover-transition shadow">16</div>
-  <div class="rounded-xl p-3 bg-purple-300 text-white font-semibold hover:scale-105 hover-transition shadow">17</div>
-  <div class="rounded-xl p-3 bg-emerald-300 text-white font-semibold hover:scale-105 hover-transition shadow">18</div>
-  <div class="rounded-xl p-3 bg-emerald-300 text-white font-semibold hover:scale-105 hover-transition shadow">19</div>
-  <div class="rounded-xl p-3 bg-emerald-300 text-white font-semibold hover:scale-105 hover-transition shadow">20</div>
-  <div class="rounded-xl p-3 bg-purple-300 text-white font-semibold hover:scale-105 hover-transition shadow">21</div>
-  <div class="rounded-xl p-3 bg-purple-300 text-white font-semibold hover:scale-105 hover-transition shadow">22</div>
-  <div class="rounded-xl p-3 bg-purple-300 text-white font-semibold hover:scale-105 hover-transition shadow">23</div>
-  <div class="rounded-xl p-3 bg-emerald-300 text-white font-semibold hover:scale-105 hover-transition shadow">24</div>
-  <div class="rounded-xl p-3 bg-emerald-300 text-white font-semibold hover:scale-105 hover-transition shadow">25</div>
-  <div class="rounded-xl p-3 bg-emerald-300 text-white font-semibold hover:scale-105 hover-transition shadow">26</div>
-  <div class="rounded-xl p-3 bg-purple-300 text-white font-semibold hover:scale-105 hover-transition shadow">27</div>
-  <div class="rounded-xl p-3 bg-purple-300 text-white font-semibold hover:scale-105 hover-transition shadow">28</div>
-  <div class="rounded-xl p-3 bg-purple-300 text-white font-semibold hover:scale-105 hover-transition shadow">29</div>
-  <div class="rounded-xl p-3 bg-emerald-300 text-white font-semibold hover:scale-105 hover-transition shadow">30</div>
-</div>
+    <header class="text-center mb-8">
+      <h1 class="text-5xl font-extrabold font-poppins mb-3 flex items-center justify-center gap-3 header-text">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-10 h-10 accent-icon-color shrink-0">
+          <path fill-rule="evenodd" d="M6.75 2.25A.75.75 0 0 1 7.5 3v1.5h9V3A.75.75 0 0 1 18 3v1.5h.75a3 3 0 0 1 3 3v11.25a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V7.5a3 3 0 0 1 3-3H6.75V3a.75.75 0 0 1 .75-.75Zm10.5 6a1.5 1.5 0 0 0-1.5 1.5v7.5a1.5 1.5 0 0 0 1.5 1.5H18a1.5 1.5 0 0 0 1.5-1.5V10.5a1.5 1.5 0 0 0-1.5-1.5h-.75Zm-9 0a1.5 1.5 0 0 0-1.5 1.5v7.5a1.5 1.5 0 0 0 1.5 1.5H7.5a1.5 1.5 0 0 0 1.5-1.5V10.5a1.5 1.5 0 0 0-1.5-1.5H6.75Z" clip-rule="evenodd" />
+        </svg>
+        <span id="current-month-year"></span>
+      </h1>
+      <p class="text-lg secondary-text">Turnos alternados</p>
+    </header>
 
-<!-- Versión móvil (lista) -->
-<div class="sm:hidden space-y-3 mt-6">
-  <!-- Días en formato lista -->
-  <!-- Día, nombre, color -->
-  <!-- Generado manualmente para cada día -->
-  <!-- Reutilizando patrón de colores y nombres -->
-  <!-- Puedes optimizar esto con JS si lo deseas -->
-  <!-- Día | DíaSemana | Persona -->
-  <!-- 1 - 30 -->
-  <div class="flex items-center justify-between rounded-xl p-4 bg-emerald-300 text-white shadow">
-    <span class="font-semibold">1 Dom</span><span>Rhandall</span>
-  </div>
-  <div class="flex items-center justify-between rounded-xl p-4 bg-emerald-300 text-white shadow">
-    <span class="font-semibold">2 Lun</span><span>Rhandall</span>
-  </div>
-  <div class="flex items-center justify-between rounded-xl p-4 bg-purple-300 text-white shadow">
-    <span class="font-semibold">3 Mar</span><span>Mamá</span>
-  </div>
-  <div class="flex items-center justify-between rounded-xl p-4 bg-purple-300 text-white shadow">
-    <span class="font-semibold">4 Mié</span><span>Mamá</span>
-  </div>
-  <div class="flex items-center justify-between rounded-xl p-4 bg-purple-300 text-white shadow">
-    <span class="font-semibold">5 Jue</span><span>Mamá</span>
-  </div>
-  <div class="flex items-center justify-between rounded-xl p-4 bg-emerald-300 text-white shadow">
-    <span class="font-semibold">6 Vie</span><span>Rhandall</span>
-  </div>
-  <div class="flex items-center justify-between rounded-xl p-4 bg-emerald-300 text-white shadow">
-    <span class="font-semibold">7 Sáb</span><span>Rhandall</span>
-  </div>
-  <div class="flex items-center justify-between rounded-xl p-4 bg-emerald-300 text-white shadow">
-    <span class="font-semibold">8 Dom</span><span>Rhandall</span>
-  </div>
-  <div class="flex items-center justify-between rounded-xl p-4 bg-purple-300 text-white shadow">
-    <span class="font-semibold">9 Lun</span><span>Mamá</span>
-  </div>
-  <div class="flex items-center justify-between rounded-xl p-4 bg-purple-300 text-white shadow">
-    <span class="font-semibold">10 Mar</span><span>Mamá</span>
-  </div>
-  <div class="flex items-center justify-between rounded-xl p-4 bg-purple-300 text-white shadow">
-    <span class="font-semibold">11 Mié</span><span>Mamá</span>
-  </div>
-  <div class="flex items-center justify-between rounded-xl p-4 bg-emerald-300 text-white shadow">
-    <span class="font-semibold">12 Jue</span><span>Rhandall</span>
-  </div>
-  <div class="flex items-center justify-between rounded-xl p-4 bg-emerald-300 text-white shadow">
-    <span class="font-semibold">13 Vie</span><span>Rhandall</span>
-  </div>
-  <div class="flex items-center justify-between rounded-xl p-4 bg-emerald-300 text-white shadow">
-    <span class="font-semibold">14 Sáb</span><span>Rhandall</span>
-  </div>
-  <div class="flex items-center justify-between rounded-xl p-4 bg-purple-300 text-white shadow">
-    <span class="font-semibold">15 Dom</span><span>Mamá</span>
-  </div>
-  <div class="flex items-center justify-between rounded-xl p-4 bg-purple-300 text-white shadow">
-    <span class="font-semibold">16 Lun</span><span>Mamá</span>
-  </div>
-  <div class="flex items-center justify-between rounded-xl p-4 bg-purple-300 text-white shadow">
-    <span class="font-semibold">17 Mar</span><span>Mamá</span>
-  </div>
-  <div class="flex items-center justify-between rounded-xl p-4 bg-emerald-300 text-white shadow">
-    <span class="font-semibold">18 Mié</span><span>Rhandall</span>
-  </div>
-  <div class="flex items-center justify-between rounded-xl p-4 bg-emerald-300 text-white shadow">
-    <span class="font-semibold">19 Jue</span><span>Rhandall</span>
-  </div>
-  <div class="flex items-center justify-between rounded-xl p-4 bg-emerald-300 text-white shadow">
-    <span class="font-semibold">20 Vie</span><span>Rhandall</span>
-  </div>
-  <div class="flex items-center justify-between rounded-xl p-4 bg-purple-300 text-white shadow">
-    <span class="font-semibold">21 Sáb</span><span>Mamá</span>
-  </div>
-  <div class="flex items-center justify-between rounded-xl p-4 bg-purple-300 text-white shadow">
-    <span class="font-semibold">22 Dom</span><span>Mamá</span>
-  </div>
-  <div class="flex items-center justify-between rounded-xl p-4 bg-purple-300 text-white shadow">
-    <span class="font-semibold">23 Lun</span><span>Mamá</span>
-  </div>
-  <div class="flex items-center justify-between rounded-xl p-4 bg-emerald-300 text-white shadow">
-    <span class="font-semibold">24 Mar</span><span>Rhandall</span>
-  </div>
-  <div class="flex items-center justify-between rounded-xl p-4 bg-emerald-300 text-white shadow">
-    <span class="font-semibold">25 Mié</span><span>Rhandall</span>
-  </div>
-  <div class="flex items-center justify-between rounded-xl p-4 bg-emerald-300 text-white shadow">
-    <span class="font-semibold">26 Jue</span><span>Rhandall</span>
-  </div>
-  <div class="flex items-center justify-between rounded-xl p-4 bg-purple-300 text-white shadow">
-    <span class="font-semibold">27 Vie</span><span>Mamá</span>
-  </div>
-  <div class="flex items-center justify-between rounded-xl p-4 bg-purple-300 text-white shadow">
-    <span class="font-semibold">28 Sáb</span><span>Mamá</span>
-  </div>
-  <div class="flex items-center justify-between rounded-xl p-4 bg-purple-300 text-white shadow">
-    <span class="font-semibold">29 Dom</span><span>Mamá</span>
-  </div>
-  <div class="flex items-center justify-between rounded-xl p-4 bg-emerald-300 text-white shadow">
-    <span class="font-semibold">30 Lun</span><span>Rhandall</span>
-  </div>
-</div>
+    <aside aria-label="Leyenda de turnos" class="flex flex-wrap justify-center gap-8 mb-10 text-base">
+      <div class="flex items-center gap-2">
+        <div class="w-6 h-6 person-rhandall-bg rounded-full shadow-md"></div>
+        <span class="font-medium person-rhandall-legend-text">Rhandall</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <div class="w-6 h-6 person-mama-bg rounded-full shadow-md"></div>
+        <span class="font-medium person-mama-legend-text">Mamá</span>
+      </div>
+    </aside>
 
+    <nav class="flex justify-between items-center mb-6">
+      <button id="prev-month" class="px-4 py-2 rounded-lg shadow-md hover:nav-button-style transition-colors duration-300 nav-button-style">
+        Mes Anterior
+      </button>
+      <button id="next-month" class="px-4 py-2 rounded-lg shadow-md hover:nav-button-style transition-colors duration-300 nav-button-style">
+        Mes Siguiente
+      </button>
+    </nav>
+
+    <section aria-labelledby="calendar-heading" role="grid" class="hidden sm:grid grid-cols-7 gap-4 text-center text-base sm:text-lg p-6 rounded-2xl shadow-deep card-bg">
+      <h2 id="calendar-heading" class="sr-only">Calendario de turnos del mes actual</h2>
+      <div role="columnheader" class="font-bold secondary-text">Dom</div>
+      <div role="columnheader" class="font-bold secondary-text">Lun</div>
+      <div role="columnheader" class="font-bold secondary-text">Mar</div>
+      <div role="columnheader" class="font-bold secondary-text">Mié</div>
+      <div role="columnheader" class="font-bold secondary-text">Jue</div>
+      <div role="columnheader" class="font-bold secondary-text">Vie</div>
+      <div role="columnheader" class="font-bold secondary-text">Sáb</div>
+
+      <div id="desktop-calendar-days" class="contents"></div>
+    </section>
+
+    <section aria-labelledby="mobile-calendar-heading" class="sm:hidden space-y-4 mt-8">
+      <h2 id="mobile-calendar-heading" class="sr-only">Lista de turnos del mes actual</h2>
+      <ul role="list" id="mobile-day-list">
+        </ul>
+    </section>
   </div>
+
+  <script defer src="script.js"></script>
 </body>
-    </html>
+</html>
